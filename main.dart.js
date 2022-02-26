@@ -45444,7 +45444,7 @@ $0(){$.hM().dA("open",["https://twitter.com/WavefulApp"])
 return null},
 $S:0}
 A.WD.prototype={
-$0(){$.hM().dA("open",["https://www.instagram.com/waveful.app/"])
+$0(){$.hM().dA("open",["https://www.instagram.com/waveful/"])
 return null},
 $S:0}
 A.WE.prototype={
