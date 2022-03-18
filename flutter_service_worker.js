@@ -36,7 +36,7 @@ const RESOURCES = {
 "/": "40c9fa3cd64e7da948d7f2cf2566e68f",
 "CNAME": "124e4042fbf152059b5805ece63fc59c",
 "app-ads.txt": "b345000f19c14c680aaaf0f9c105a221",
-"index.html": "8569fd6612b09f4f5b7f63d801ca9655",
+"index.html": "3065b94480be375b333894fcfc065fdd",
 "termsofuse/index.html": "40c9fa3cd64e7da948d7f2cf2566e68f",
 "version.json": "1fb178616608bf2fa0b1735a950e31a8",
 "icons/Icon-512.png": "b60bc846c8353d869dd35d48e276f0f0",
