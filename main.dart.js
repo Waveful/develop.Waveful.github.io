@@ -45540,7 +45540,7 @@ j.push(A.Kg(m))}return A.Kg(j)}}
 A.Nv.prototype={
 $0(){var s,r="https://waveful.app"+this.a.c,q="Generating dynamic link that redirects to "+r
 A.iG(B.yW.h(0)+": "+q)
-s="https://links.waveful.app/?link="+r+"&apn=app.waveful&ibi=app.waveful&ipbi=app.waveful&isi=1532913255"
+s="https://links.waveful.app/?link="+r+"&apn=app.waveful&ibi=app.waveful&ipbi=app.waveful&isi=1532913255&ofl=https://waveful.app/#Download-App"
 q="Dynamic link generated: "+s
 A.iG(B.yW.h(0)+": "+q)
 $.IU().hs("open",[s])},
