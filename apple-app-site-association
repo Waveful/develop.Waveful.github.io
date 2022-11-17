@@ -8,6 +8,7 @@
           "/accounts/*",
           "/categories/*",
           "/comments/*",
+          "/pages/*",
           "/posts/*",
           "/referral/*",
           "/replies/*",
