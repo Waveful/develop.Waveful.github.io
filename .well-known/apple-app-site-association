@@ -12,6 +12,7 @@
           "/posts/*",
           "/referral/*",
           "/replies/*",
+          "/tsunami_referral/*",
           "/tsunamis/*"
         ]
       }
