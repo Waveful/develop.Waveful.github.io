@@ -8,7 +8,7 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.js": "c21852696bc1cc82e8894d851c01921a",
 "canvaskit/profiling/canvaskit.wasm": "371bc4e204443b0d5e774d64a046eb99",
 "canvaskit/canvaskit.wasm": "3de12d898ec208a5f31362cc00f09b9e",
-"index.html": "4e5f107d8dd2acf6417f5bb4281610f0",
+"index.html": "3e95ac1990879e83414d3478f0f72a7a",
 "/": "40c9fa3cd64e7da948d7f2cf2566e68f",
 "apple-app-site-association": "0dc890ec2ed103bbea14c69eb8290a68",
 "CNAME": "124e4042fbf152059b5805ece63fc59c",
