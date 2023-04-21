@@ -30,7 +30,19 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <!--  Set Flutter Renderer (the html option optimizes download size over performance) -->
+  <!-- Redirect if URL is https://*/invites/inviteCode -->
+  <script>
+    const pathName = window.location.pathname;
+    const isInvites = pathName.startsWith("/invites/");
+    const isTikTokBrowser = window.navigator.userAgent.includes("BytedanceWebview") || window.navigator.userAgent.includes("musical_ly");
+    const doesBrowserSupportDynamicLinks = !isTikTokBrowser;
+    if (isInvites && isTikTokBrowser) {
+      const dynamicLink = "https://invites.waveful.app/" + pathName.replaceFirst("/invites", "");
+      window.location.replace(dynamicLink);
+    }
+  </script>
+
+  <!-- Set Flutter Renderer (the html option optimizes download size over performance) -->
   <script>
     window.flutterWebRenderer = "html";
   </script>
