@@ -36,8 +36,8 @@
     const isInvites = pathName.startsWith("/invites/");
     const isTikTokBrowser = window.navigator.userAgent.includes("BytedanceWebview") || window.navigator.userAgent.includes("musical_ly");
     const doesBrowserSupportDynamicLinks = !isTikTokBrowser;
-    if (isInvites && isTikTokBrowser) {
-      const dynamicLink = "https://invites.waveful.app/" + pathName.replaceFirst("/invites", "");
+    if (isInvites && doesBrowserSupportDynamicLinks) {
+      const dynamicLink = "https://invites.waveful.app" + pathName.replaceFirst("/invites", "");
       window.location.replace(dynamicLink);
     }
   </script>
