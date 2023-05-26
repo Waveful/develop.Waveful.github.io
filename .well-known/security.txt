@@ -1,4 +1,4 @@
 Contact: mailto:security@waveful.app
-Expires: 2023-05-31T22:00:00.000Z
+Expires: 2025-05-31T22:00:00.000Z
 Preferred-Languages: en, it
 Canonical: https://waveful.app/.well-known/security.txt
