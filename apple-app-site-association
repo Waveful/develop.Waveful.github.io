@@ -8,6 +8,8 @@
           "/accounts/*",
           "/categories/*",
           "/comments/*",
+          "/island_referral/*",
+          "/islands/*",
           "/pages/*",
           "/posts/*",
           "/referral/*",
