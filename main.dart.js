@@ -19002,8 +19002,8 @@ return A.aa(q.b.$0(),$async$jd)
 case 3:return A.a2(null,r)}})
 return A.a3($async$jd,r)},
 Ua(){var s=A.aY(new A.OC(this))
-return{initializeEngine:A.aY(new A.OD(this)),autoStart:s}},
-Np(){return{runApp:A.aY(new A.Oz(this))}}}
+return t.e.a({initializeEngine:A.aY(new A.OD(this)),autoStart:s})},
+Np(){return t.e.a({runApp:A.aY(new A.Oz(this))})}}
 A.OC.prototype={
 $0(){return A.acv(new A.OB(this.a).$0(),t.e)},
 $S:44}
@@ -19012,7 +19012,7 @@ $0(){var s=0,r=A.a4(t.e),q,p=this
 var $async$$0=A.a5(function(a,b){if(a===1)return A.a1(b,r)
 while(true)switch(s){case 0:s=3
 return A.aa(p.a.jd(),$async$$0)
-case 3:q={}
+case 3:q=t.e.a({})
 s=1
 break
 case 1:return A.a2(q,r)}})
@@ -19050,7 +19050,7 @@ E6(a,b){var s=0,r=A.a4(t.H),q=this
 var $async$$2=A.a5(function(c,d){if(c===1)return A.a1(d,r)
 while(true)switch(s){case 0:s=2
 return A.aa(q.a.b.$0(),$async$$2)
-case 2:A.a9U(a,{})
+case 2:A.a9U(a,t.e.a({}))
 return A.a2(null,r)}})
 return A.a3($async$$2,r)},
 $S:118}
@@ -54471,7 +54471,7 @@ B.BJ=function() {
     }
   }
   function getUnknownTagGenericBrowser(object, tag) {
-    if (self.HTMLElement && object instanceof HTMLElement) return "HTMLElement";
+    if (object instanceof HTMLElement) return "HTMLElement";
     return getUnknownTag(object, tag);
   }
   function prototypeForTag(tag) {
@@ -54482,7 +54482,7 @@ B.BJ=function() {
     return constructor.prototype;
   }
   function discriminator(tag) { return null; }
-  var isBrowser = typeof navigator == "object";
+  var isBrowser = typeof HTMLElement == "function";
   return {
     getTag: getTag,
     getUnknownTag: isBrowser ? getUnknownTagGenericBrowser : getUnknownTag,
@@ -54492,9 +54492,10 @@ B.BJ=function() {
 B.BO=function(getTagFallback) {
   return function(hooks) {
     if (typeof navigator != "object") return hooks;
-    var ua = navigator.userAgent;
-    if (ua.indexOf("DumpRenderTree") >= 0) return hooks;
-    if (ua.indexOf("Chrome") >= 0) {
+    var userAgent = navigator.userAgent;
+    if (typeof userAgent != "string") return hooks;
+    if (userAgent.indexOf("DumpRenderTree") >= 0) return hooks;
+    if (userAgent.indexOf("Chrome") >= 0) {
       function confirm(p) {
         return typeof window == "object" && window[p] && window[p].name == p;
       }
@@ -54507,26 +54508,10 @@ B.BK=function(hooks) {
   if (typeof dartExperimentalFixupGetTag != "function") return hooks;
   hooks.getTag = dartExperimentalFixupGetTag(hooks.getTag);
 }
-B.BL=function(hooks) {
-  var getTag = hooks.getTag;
-  var prototypeForTag = hooks.prototypeForTag;
-  function getTagFixed(o) {
-    var tag = getTag(o);
-    if (tag == "Document") {
-      if (!!o.xmlVersion) return "!Document";
-      return "!HTMLDocument";
-    }
-    return tag;
-  }
-  function prototypeForTagFixed(tag) {
-    if (tag == "Document") return null;
-    return prototypeForTag(tag);
-  }
-  hooks.getTag = getTagFixed;
-  hooks.prototypeForTag = prototypeForTagFixed;
-}
 B.BN=function(hooks) {
-  var userAgent = typeof navigator == "object" ? navigator.userAgent : "";
+  if (typeof navigator != "object") return hooks;
+  var userAgent = navigator.userAgent;
+  if (typeof userAgent != "string") return hooks;
   if (userAgent.indexOf("Firefox") == -1) return hooks;
   var getTag = hooks.getTag;
   var quickMap = {
@@ -54543,7 +54528,9 @@ B.BN=function(hooks) {
   hooks.getTag = getTagFirefox;
 }
 B.BM=function(hooks) {
-  var userAgent = typeof navigator == "object" ? navigator.userAgent : "";
+  if (typeof navigator != "object") return hooks;
+  var userAgent = navigator.userAgent;
+  if (typeof userAgent != "string") return hooks;
   if (userAgent.indexOf("Trident/") == -1) return hooks;
   var getTag = hooks.getTag;
   var quickMap = {
@@ -54570,6 +54557,24 @@ B.BM=function(hooks) {
   }
   hooks.getTag = getTagIE;
   hooks.prototypeForTag = prototypeForTagIE;
+}
+B.BL=function(hooks) {
+  var getTag = hooks.getTag;
+  var prototypeForTag = hooks.prototypeForTag;
+  function getTagFixed(o) {
+    var tag = getTag(o);
+    if (tag == "Document") {
+      if (!!o.xmlVersion) return "!Document";
+      return "!HTMLDocument";
+    }
+    return tag;
+  }
+  function prototypeForTagFixed(tag) {
+    if (tag == "Document") return null;
+    return prototypeForTag(tag);
+  }
+  hooks.getTag = getTagFixed;
+  hooks.prototypeForTag = prototypeForTagFixed;
 }
 B.iU=function(hooks) { return hooks; }
 
