@@ -6,8 +6,9 @@
         "appID": "Y9KA7F9L32.app.waveful",
         "paths": [
           "/accounts/*",
-          "/categories/*",
           "/comments/*",
+          "/c/*",
+          "/communities/*",
           "/island_referral/*",
           "/islands/*",
           "/pages/*",
@@ -15,7 +16,9 @@
           "/referral/*",
           "/replies/*",
           "/tsunami_referral/*",
-          "/tsunamis/*"
+          "/tsunamis/*",
+          "/u/*",
+          "/users/*",
         ]
       }
     ]
