@@ -20116,7 +20116,7 @@ return n}}
 A.a83.prototype={
 $1(a){var s=A.d7().b
 s=s==null?null:s.canvasKitBaseUrl
-return(s==null?"https://www.gstatic.com/flutter-canvaskit/72f2b18bb094f92f62a3113a8075240ebb59affa/":s)+a},
+return(s==null?"https://www.gstatic.com/flutter-canvaskit/ef0cd000916d64fa0c5d09cc809fa7ad244a5767/":s)+a},
 $S:28}
 A.Qv.prototype={
 d5(a,b){var s,r=this.a
